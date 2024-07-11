@@ -4,11 +4,8 @@
   <img src="https://imgur.com/L54eATql.png">
   <p><b>Hoyolab Auto Login</b></p>
   <img alt="Static Badge" src="https://img.shields.io/badge/3.10_--_3.11-red?logo=python&logoColor=white&label=Python&labelColor=%233772a2&color=%23ffdd54">
-  <a href="[https://github.com/raidensakura](https://github.com/python/black)"><img src="https://img.shields.io/badge/code%20style-black-1c1c1c.svg"></a>
-  <a href="https://dsc.gg/transience/"><img src="https://discord.com/api/guilds/616969119685935162/widget.png"></a>
-  <a href="https://ko-fi.com/P5P6D65UW">
-  	<img alt="Static Badge" src="https://img.shields.io/badge/ko--fi.com%2Fraidensakura-d11df9?logo=kofi&logoColor=white&label=Support%20me&color=%23ff5b62">
-  </a>
+  <a href="https://github.com/python/black"><img src="https://img.shields.io/badge/code%20style-black-1c1c1c.svg"></a>
+
 </h1>
 
 <p align="center">
@@ -27,7 +24,7 @@
 
 ## Overview
 
-A simple program to always claim Hoyolab's daily login system for Hoyoverse games. Script was originally made by [vermaysha/Hoyolab-Auto-Daily-Checkin](https://github.com/vermaysha/Hoyolab-Auto-Daily-Checkin), but since the original repository is archived I decided to fork and maintain it myself, along with some improvements and installation guide.
+A simple program to always claim Hoyolab's daily login system for Hoyoverse games. Script was originally made by [vermaysha/Hoyolab-Auto-Daily-Checkin](https://github.com/vermaysha/Hoyolab-Auto-Daily-Checkin), forked by [raidensakura/hoyolab-auto-login](https://github.com/raidensakura/hoyolab-auto-login) and now maintained by myself, there will be no major improvements but I welcome pull requests.
 
 ### **Features:**
 
@@ -42,9 +39,9 @@ A simple program to always claim Hoyolab's daily login system for Hoyoverse game
 <details>
 <summary><b>Hoyolab account cookie (<code>COOKIE</code>)</b></summary>
 
-Navigate to [Hoyolab website](https://www.hoyolab.com/) with your account logged in, open developer tools on your browser (F12 for Firefox/Chrome), navigate to Console tab, enter `document.cookie` in, and copy the long-string text output without the quotation marks.
+Obtain your cookie in the code redemption page of any Hoyolab-supported games. Refer to the image below for guide.
 
-![image](https://raw.githubusercontent.com/raidensakura/hoyolab-auto-login/f0e36c3d39f6e9363b3c772e63ded57c5fbae8c8/images/3.png)
+![obtain_cookie](https://github.com/raidensakura/hoyolab-auto-login/assets/38610216/7837cbbd-f987-4a31-9317-757595182653)
 
 </details>
 
@@ -59,7 +56,7 @@ You can also choose to use existing one by clicking on `Copy Webhook URL`.
 
 You can also configure the script to notify (ping) your Discord ID in case of a login failure. To do this, append `DISCORD_ID=1234567890; rest_of_cookie=; ...` at the start your cookie.
 
-![image](https://raw.githubusercontent.com/raidensakura/hoyolab-auto-login/f0e36c3d39f6e9363b3c772e63ded57c5fbae8c8/images/5.png)
+![5](https://github.com/raidensakura/hoyolab-auto-login/assets/38610216/b9d66129-5ef4-4a3a-8331-13de8a2f7f8b)
 
 </details>
 
@@ -106,38 +103,14 @@ In addition to hosting your applications, [Northflank](https://northflank.com/pr
 
 </details>
 
-<details>
-<summary><b>Running the script on Zeabur</b></summary>
-
-[Zeabur has a free plan](https://zeabur.com/pricing) that doesn't require a payment method, but like Railway, it has no option to schedule runtime, so this script will run constantly as a Docker container. The downside is that it takes slightly longer to build a Docker image on Zeabur than the other platforms.
-
-1. [Sign Up on Zeabur](https://dash.zeabur.com) if you haven't.
-2. Fork this repo  
-![image](https://user-images.githubusercontent.com/38610216/216755745-4c347b2c-1e1b-4672-8212-17bd79a24d16.png)
-3. Make a new project and a new service in it, choosing the "Deploy from your source code" option  
-![image](https://github.com/raidensakura/hoyolab-auto-login/assets/38610216/2ffd4706-549e-42a3-92fd-74d65274209e)  
-4. Click "Configure GitHub APP" and select the repository you just forked  
-![image](https://github.com/raidensakura/hoyolab-auto-login/assets/38610216/96a7e86d-4aaa-4a99-8b30-a4526c48b3ec)  
-5. Select the "master" branch and click "Deploy"  
-![image](https://github.com/raidensakura/hoyolab-auto-login/assets/38610216/244c8e58-fb89-44a5-bdaf-efd8919d1cce)  
-6. Select the new service you just deployed, and fill in your credentials under "Variable". Make sure to **not** include `RUN_ONCE` otherwise your script will not loop every day. It should look like this afterward  
-![image](https://github.com/raidensakura/hoyolab-auto-login/assets/38610216/73f15821-b005-4268-916f-76fe170388e4)
-7. Under "Deployments", click "Redeploy" for the variable changes to take effect.
-
-</details>
-
 ## Common Questions
-
-- **Which platform should I choose?**  
-If you don't have a payment card for verification, choose Zeabur.  
-If you want a simple UI and don't mind upgrading to their developer plan, choose Railway.  
-If you don't want your script to run constantly, choose Northflank.
 
 - **If I play multiple Hoyoverse games, does it log into all of them?**  
 The supported games for now are:
   - Honkai Impact 3rd  
   - Genshin Impact  
-  - Honkai: Star Rail   
+  - Honkai: Star Rail  
+  - Zenless Zone Zero
 
   If you've bound those game accounts to your Hoyolab account, it will claim the daily login in all of them.
 
@@ -151,12 +124,13 @@ Try logging out and logging back into your Hoyolab account. If it still doesn't 
   * Genshin Impact - [Code Redemption](https://genshin.hoyoverse.com/en/gift) | [Daily Sign-in](https://act.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=e202102251931481)
   * Honkai: Star Rail - [Code Redemption](https://hsr.hoyoverse.com/gift) | [Daily Sign-in](https://act.hoyolab.com/bbs/event/signin/hkrpg/index.html?act_id=e202303301540311)
   * Honkai Impact 3 - [Daily Sign-in](https://act.hoyolab.com/bbs/event/signin-bh3/index.html?act_id=e202110291205111)
+  * Zenless Zone Zero - [Daily Sign-in](https://act.hoyolab.com/bbs/event/signin/zzz/e202406031448091.html?act_id=e202406031448091)
 
 - **Why aren't you using GitHub Actions?**  
 Using GitHub Actions may violate GitHub's Terms of Service and lead to this repository being taken down.
 
 - **If you have any other questions**  
-Feel free to join my [Discord server](https://dsc.gg/transience) and post your question there. I'll try to reply as soon as I can.
+Feel free to join my [Discord server](https://discord.gg/BVqnQcTxBY) and post your question there. I'll try to reply as soon as I can.
 
 ## Updating
 
